@@ -1,0 +1,47 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Auther {
+  _id: String!
+  email: String!
+  first_name: String!
+  last_name: String!
+  password: String!
+}
+
+input AutherInput {
+  _id: String
+  email: String!
+  first_name: String!
+  last_name: String!
+  password: String!
+}
+
+type Book {
+  _id: String!
+  author: String!
+  published: Boolean!
+  title: String!
+}
+
+input BookInput {
+  _id: String
+  author: String!
+  published: Boolean!
+  title: String!
+}
+
+type Mutation {
+  createBook(input: BookInput!): Book!
+  deleteBook(id: ID!): Book!
+  register(input: AutherInput!): Auther!
+  updateBook(id: ID!, input: BookInput!): Book!
+}
+
+type Query {
+  getAllBooks: [Book!]!
+  getBookById(id: ID!): Book
+  login(email: String!): Auther!
+  sayHello: String!
+}
